@@ -9,8 +9,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
-
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -34,36 +32,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-     var arrNames = [
-      'Raman ',
-      'Jayendra',
-      'Krish',
-      'Mayank',
-      'Mridul',
-      'Harry',
-      'Rohit',
-      'Sharma',
-      'tippu',
-    ];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blue,
         title: const Text('Beginner'),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Text('${index+1}'),
-            title: Text(arrNames[index]),
-            subtitle: Text('Student'),
-            trailing: Icon(Icons.add),
-          );
-        },
-         itemCount: arrNames.length,
-        separatorBuilder: (context,index){
-          return Divider(height : 50, thickness : 2);
-        },
-      ),
-    );
+      body: Text(''),
+      );
   }
 }

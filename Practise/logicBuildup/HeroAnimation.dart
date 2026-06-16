@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+import 'HeroExtend.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: ''),
     );
   }
 }
@@ -37,19 +37,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text('WhatsApp'),
+        title: Text('HeroAnimation'),
       ),
-      body: Center(
-        child: Container(
-          height: double.infinity,
-          width : double.infinity,
-          color: Colors.green.shade100,
-          child: SizedBox(
-            
-            child: Image.asset('assets/images/whatsapp.png'),
+      body: Container(
+        child : Center(
+          child : InkWell(
+             onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage()));
+             },
+            child: Hero(tag: 'Logo', 
+                         child: Image.asset('assets/images/logo.jpeg',width: 200,height : 200)),
           ),
-        ),
-      )
+        )
+      ),
       );
   }
 }

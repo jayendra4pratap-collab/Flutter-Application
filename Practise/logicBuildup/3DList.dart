@@ -9,8 +9,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
-
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -34,36 +32,46 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-     var arrNames = [
-      'Raman ',
-      'Jayendra',
-      'Krish',
-      'Mayank',
-      'Mridul',
-      'Harry',
-      'Rohit',
-      'Sharma',
-      'tippu',
-    ];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Beginner'),
+        backgroundColor: Colors.blue,
+        title: const Text('3D List'),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Text('${index+1}'),
-            title: Text(arrNames[index]),
-            subtitle: Text('Student'),
-            trailing: Icon(Icons.add),
-          );
-        },
-         itemCount: arrNames.length,
-        separatorBuilder: (context,index){
-          return Divider(height : 50, thickness : 2);
-        },
-      ),
-    );
+      body: ListWheelScrollView(itemExtent:100 , children:[
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+        Container(
+          width : 200,
+          color : Colors.blue,
+        ),
+      ]),
+      );
   }
 }

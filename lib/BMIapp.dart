@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'f_BMI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text('Your BMI'),
+        title: Center(child: const Text('Your BMI')),
       ),
       body: Container(
         color : Colors.blue.shade200,
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(child: Text('BMI',style : TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
+                Center(child: Text('Body Mass Index',style : TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
                 TextField(
                     controller: wtController,
                     decoration: InputDecoration(
@@ -100,19 +100,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     var bmi  = iwt/(tm*tm);
 
                     var msg="";
-                    if(bmi<18){
+                    if(bmi<18.5){
                         msg="You are UnderWeight!!";
                        // bgColor =Colors.orange;
                     }
 
-                    else if(18<=bmi&&bmi<=25){
+                    else if(18.5<=bmi&&bmi<=24.9){
                           msg="You are healthy!!";
                        // bgColor =Colors.green;
                     }
-
+                    else if(25.0<=bmi&&bmi<=29.9){
+                          msg="You are OverWeight!";
+                       // bgColor =Colors.green;
+                    }
                     else
                     {
-                        msg="You are OverWeight!!";
+                        msg="Obesity!!";
                        // bgColor =Colors.redAccent;
                     }
 
